@@ -1,4 +1,6 @@
-// write a script in Ruby that will automatically create files from the code provided by chatgpt
+# write a script in Ruby that will automatically create files from the code provided by chatgpt
+# ..hmmm, not quite what i wanted... but cute! :D
+
 # Function to create files from code snippets
 def create_files(snippets)
     snippets.each_with_index do |snippet, index|
