@@ -3,9 +3,11 @@
 require 'openai'
 
 # Set your OpenAI API key here
-Openai.configure do |config|
-  config.api_key = 'YOUR_OPENAI_API_KEY'
+OpenAI.configure do |config|
+  config.access_token = 'poop' # DO NOT MAKE PUBLIC
 end
+
+client = OpenAI::Client.new
 
 # Function to create files from code snippets
 def create_files(snippets)
@@ -22,28 +24,17 @@ end
 
 # ChatGPT prompt
 chat_prompt = <<~PROMPT
-  Create code files from the following snippets:
-  1. class HelloWorld
-       def initialize
-           @message = 'Hello, world!'
-       end
-
-       def say_hello
-           puts @message
-       end
-  2. class Calculator
-       def add(a, b)
-           a + b
-       end
+re-create a prototype version of the bumper balls mini game from the Mario Party series using the Heaps.io game engine
 PROMPT
 
 # Call the OpenAI API
-response = Openai::Completion.create(
+response = client.completions(
+  parameters: {
   engine: 'text-davinci-003',
   prompt: chat_prompt,
   max_tokens: 150,  # Adjust as needed
   stop: nil
-)
+})
 
 # Parse and extract code snippets from the response
 snippets = response['choices'][0]['text'].split(/(\d+\.\s+class )/).reject(&:empty?).each_slice(2).map do |class_name, code| # lmao, beautiful!
@@ -52,3 +43,16 @@ end
 
 # Create files from code snippets
 create_files(snippets)
+
+
+=begin
+# Parse the response and extract code snippets
+code_snippets = response.choices[0].text.scan(/```(.*?)```/m).flatten
+
+# Create files from code snippets
+code_snippets.each_with_index do |code, index|
+  filename = "code_snippet_#{index + 1}.py"
+  File.open(filename, 'w') { |file| file.write(code) }
+  puts "File '#{filename}' created."
+end
+=end
