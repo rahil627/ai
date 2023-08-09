@@ -1,0 +1,4 @@
+dependencies:
+  flutter:
+    sdk: flutter
+  google_maps_flutter: ^2.0.10  # Use the latest version

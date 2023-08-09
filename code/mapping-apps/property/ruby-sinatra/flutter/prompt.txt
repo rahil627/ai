@@ -1,0 +1,1 @@
+write a web app using Google's Flutter framework and Google Maps api that provides a map of property including the data on the current and previous owners, and it's cost.
