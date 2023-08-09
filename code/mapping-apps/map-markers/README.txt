@@ -1,6 +1,7 @@
 just some notes:
-pure js is just fine (server.js), i guess you'd install node.js for server-side handling?
-ruby/sinatra is just prettier (app.rb), and if you've got that installed server-side, can avoid node.js ;)
+pure js is just fine (server.js), i guess you'd install node.js for server-side execution
+  - express.js is the js copy of sinatra
+ruby/sinatra is just prettier (app.rb), and if you've got that installed server-side, can avoid node.js/npm/etc. ;)
   - probably my fav simple solution, but still have to deal with a front-end, likely pure js/css
   - todo: compare to pure ruby
 x/elixir is compact, with a strict MVC file structure, def a learning curve for functional programming
