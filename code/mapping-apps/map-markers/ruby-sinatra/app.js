@@ -7,6 +7,10 @@ function initMap() {
     zoom: 10
   });
 
+  map.addListener('click', function(event) {
+    addMarker(event.latLng);
+  });
+
   fetch('/api/markers')
     .then(response => response.json())
     .then(data => {
@@ -27,14 +31,30 @@ function initMap() {
     });
 }
 
+function addMarker(location) {
+  var marker = new google.maps.Marker({
+    position: location,
+    map: map,
+    draggable: true
+  });
+
+  marker.addListener('dragend', function() {
+    updateMarker(marker);
+  });
+
+  markers.push(marker);
+
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST', '/api/markers', true);
+  xhr.setRequestHeader('Content-Type', 'application/json');
+  xhr.send(JSON.stringify({ lat: marker.getPosition().lat(), lng: marker.getPosition().lng() }));
+}
+
 function updateMarker(marker) {
   var id = markers.indexOf(marker) + 1;
   var position = marker.getPosition();
-  fetch(`/api/markers/${id}`, {
-    method: 'PUT',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({ lat: position.lat(), lng: position.lng() })
-  });
+  var xhr = new XMLHttpRequest();
+  xhr.open('PUT', `/api/markers/${id}`, true);
+  xhr.setRequestHeader('Content-Type', 'application/json');
+  xhr.send(JSON.stringify({ lat: position.lat(), lng: position.lng() }));
 }
