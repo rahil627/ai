@@ -1,0 +1,2 @@
+write a web app using Ruby's Jekyll and Sinatra framework that allows people to add and edit geo-location markers, and then displays them on a map
+
