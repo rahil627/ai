@@ -1,10 +1,11 @@
+#!/usr/bin/env ruby
 # write a script in Ruby that will parse a chatgpt prompt and create files from the code snippets, inferring the name of the files from the class name, provided by chatgpt
 
 require 'openai'
 
 # Set your OpenAI API key here
 OpenAI.configure do |config|
-  config.access_token = 'poop' # DO NOT MAKE PUBLIC
+  config.access_token = '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' # DO NOT MAKE PUBLIC
 end
 
 client = OpenAI::Client.new
