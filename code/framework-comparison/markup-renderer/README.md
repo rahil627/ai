@@ -1,10 +1,17 @@
 conclusion:
 ruby > python
+  - scripting
 crystal == haxe >= go
+  - beyond small scripts
 special cases:
   - elixir
+    - threading
   - Ocaml
-  - C or rust >>> C++
+    - parsing/compilers
+  - rust >>> C++
+    - low-level
+  - C
+    - low-low-level
 
 scripting:
 **ruby**
