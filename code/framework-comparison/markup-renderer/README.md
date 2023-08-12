@@ -1,3 +1,5 @@
+TODO: move to prog langs notes
+
 conclusion:
 ruby > python
   - scripting
@@ -20,6 +22,7 @@ scripting:
   - with ai to generate libs, it should be easy to catch-up
   - with solid C interop, better than go?, makes it the most ideal lang ever (can use for games!! :) )
   - Kemal lib seems a good replacement for Sinatra (for super simple web apps)
+  - llvm fast
 **elixir**
   - not a big enough program to make use of functional programming
 note
@@ -78,6 +81,7 @@ dart
 **rust** (mozilla/open-source?)
   - explicit about memory references (&), otherwise the same!
   - terrible class::function syntax
+  - llvm
 
 nim
   - "C for Python developers"
@@ -91,8 +95,10 @@ C# (microsoft)
   - has that clunky microsoft boring weighty feel
 C++
   - not too bad!
+  - llvm fast
 C
   - no string class! =O
+  - llvm fast
 
 zig
   - explicit about using the allocator to allocate the heap...
@@ -102,6 +108,7 @@ other:
 julia
   - **maybe the best syntax, combining the best of all**
   - "Fortran for Python developers (more scientific-oriented community and lib, like R)
+  - llvm fast
 
 swift (apple crap)
   - uses old Apple Foundation library (NS...)
