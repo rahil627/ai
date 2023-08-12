@@ -1,0 +1,21 @@
+-module(markup_renderer).
+-compile([export_all]).
+
+render_markup(Text) ->
+    MarkupTags = [
+        {"\\[title\\](.*?)\\[/title\\]", "\e[33;1m\\1\e[0m"},    % Yellow bold text
+        {"\\[emphasis\\](.*?)\\[/emphasis\\]", "\e[31;1m\\1\e[0m"} % Red bold text
+    ],
+    render_markup(Text, MarkupTags).
+
+render_markup(_, []) -> "";
+render_markup(Text, [{Tag, Replacement} | RestTags]) ->
+    ReplacedText = re:replace(Text, Tag, Replacement, [{return, list}]),
+    render_markup(ReplacedText, RestTags).
+
+main() ->
+    InputFilename = "input.txt",
+    {ok, InputFile} = file:read_file(InputFilename),
+    Content = binary_to_list(InputFile),
+    RenderedContent = render_markup(Content),
+    io:format("~s~n", [RenderedContent]).
