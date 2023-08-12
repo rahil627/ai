@@ -1,0 +1,48 @@
+"note: because there's no connection to the OS (nor the OS's console app),"
+"this app create's it's own GUI instead!"
+
+"note: this code doesn't belong to any file,"
+"rather, this code belongs to an object in the dev environment"
+
+Object subclass: MarkupRenderer [
+    MarkupRenderer class >> renderMarkup: aString [
+        "Define markup tags and their corresponding formatting"
+        markupTags := {
+            '\[title\](.*?)\[/title\]' -> 'TextStyle bold color: Color orange',
+            '\[emphasis\](.*?)\[/emphasis\]' -> 'TextStyle bold color: Color red'
+        }.
+
+        "Apply markup rendering"
+        markupTags do: [:tag |
+            | regex replacement |
+            regex := tag key asRegex.
+            replacement := tag value.
+            aString := (aString copyReplacingAllRegexesWith: regex with: replacement).
+        ].
+
+        ^ aString asText
+    ]
+
+    MarkupRenderer class >> openUI [
+        | inputField outputField window |
+
+        inputField := TextFieldMorph new.
+        inputField extent: 300@30; position: 10@10; yourself.
+
+        outputField := TextMorph new.
+        outputField extent: 300@100; position: 10@50; readOnly: true; yourself.
+
+        window := SystemWindow new.
+        window addMorph: inputField.
+        window addMorph: outputField.
+        window model: self.
+        window title: 'Markup Renderer'.
+        window openInWorld.
+        
+        inputField whenTextChanged: [
+            | renderedContent |
+            renderedContent := self renderMarkup: inputField contents.
+            outputField text: renderedContent.
+        ].
+    ]
+]
