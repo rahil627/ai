@@ -1,11 +1,13 @@
-TODO: move to prog langs notes
+TODO!: move to prog langs notes
 
 conclusion:
 ruby > python
   - scripting
-crystal == haxe >= go
+crystal == nim == haxe == OCaml(?) >= go
   - beyond small scripts
 special cases:
+  - haxe/nim
+    - transpile to js or many other langs (don't write js!)
   - elixir
     - threading
   - Ocaml
@@ -83,9 +85,10 @@ dart
   - terrible class::function syntax
   - llvm
 
-nim
+**nim**
   - "C for Python developers"
   - brings the disgusting whitespace-delimited syntax of python to systems langs
+  - https://forum.nim-lang.org/t/1880
 
 scala
   - eh, the same as the others..?
