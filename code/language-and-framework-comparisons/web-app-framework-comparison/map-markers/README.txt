@@ -1,3 +1,13 @@
+conclusion:
+ruby minimal web frameworks (roda > sinatra)
+  - for old school web app making in a minimalist style
+flutter
+  - for mobile apps + web apps together! > react native
+  - for performance/graphics thanks to web assembly output
+react vs rails
+  - for big stuff
+
+
 just some notes:
 https://www.reddit.com/r/ruby/comments/ecg2q2/which_ruby_web_framework_to_use_these_days/
   - Why is it you want to use a framework? If you just need a way to interact via HTTP you might want to look into rack. Want routing as well? Might as well start out with roda. Need more features and ease of use? Check out sinatra. Want to learn about a battle-tested, full featured framework? Look into rails.
@@ -10,16 +20,27 @@ hanami or rails
 
 
 
-pure js is just fine (server.js), i guess you'd install node.js for server-side execution
+x/pure js
+  - acutally looks good
+  - rquires node.js for server-side execution
   - express.js is the js copy of sinatra
-**ruby/sinatra** is just prettier (app.rb), and if you've got that installed server-side, can avoid node.js/npm/etc. ;)
-  - seems like the prettiest solution, and it even includes a choice of templating system (just as jekyll does), to
-simplify writing html/js/css, and with your choice in style! 
-  - todo: compare to pure ruby
-x/elixir is compact, with a strict MVC file structure, def a learning curve for functional programming
+**ruby/sinatra/roda** (or python/flask)
+  - the prettiest solution (app.rb)
+  - even includes a choice of templating system (just as jekyll does): simplify writing html/js/css, and with your choice in style!
+  - you'd still have to write html/js though :(
+x/elixir
+  - compact
+  - strict MVC file structure
+  - has an additional learning curve for functional programming
 
 for bigger apps can throw in flutter or react
-flutter feels more systems programmingy (lots of ugly nesting), probably with better debugging too, and hot re-load for mobile
+
+**flutter**
+  - **NO HTML/CSS/JS!!!**
+  - compile (transpile?) to web assembly
+  - coming soon: interop with js
+  - feels more systems programmingy (lots of ugly nesting), probably with better debugging too, and hot re-load for mobile
+
 react actually has the most sensible output and also one file
   - what's the overhead? overkill?
   - react native has direct competition with flutter
