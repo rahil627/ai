@@ -1,19 +1,23 @@
 TODO!: move to prog langs notes
 
 conclusion:
+bash script > fish script
+  - simple scripts, automation
 ruby > python
-  - scripting
-crystal == nim == haxe == OCaml(?) >= go
-  - beyond small scripts
+  - scripting (console apps)
+crystal == nim == haxe >= OCaml(?) == go
+  - compiled / for speed
 special cases:
-  - haxe/nim
-    - transpile to js or many other langs (don't write js!)
-  - elixir
+  - crystal/haxe?
+    - interop with C
+  - haxe/nim/dart
+    - transpile to js/wasm or many other langs (don't write js!)
+  - elixir (phoenix > sinatra/roda)
     - threading
   - Ocaml
     - parsing/compilers
   - rust >>> C++
-    - low-level
+    - low-level, memory management
   - C
     - low-low-level
 

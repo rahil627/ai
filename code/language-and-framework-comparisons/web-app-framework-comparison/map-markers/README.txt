@@ -1,9 +1,11 @@
 conclusion:
 ruby minimal web frameworks (roda > sinatra)
-  - for old school web app making in a minimalist style
-flutter
+  - **for minimalist apps**
+  - for educational purposes: old school web app making in a minimalist style
+**flutter**
   - for mobile apps + web apps together! > react native
   - for performance/graphics thanks to web assembly output
+  - **for people that hate web dev (html/css/js)**
 react vs rails
   - for big stuff
 
@@ -28,6 +30,7 @@ x/pure js
   - the prettiest solution (app.rb)
   - even includes a choice of templating system (just as jekyll does): simplify writing html/js/css, and with your choice in style!
   - you'd still have to write html/js though :(
+  - see this example: https://github.com/katleiahramos/Sinatra-Capsule-Wardrobe-App/tree/master
 x/elixir
   - compact
   - strict MVC file structure
@@ -40,6 +43,8 @@ for bigger apps can throw in flutter or react
   - compile (transpile?) to web assembly
   - coming soon: interop with js
   - feels more systems programmingy (lots of ugly nesting), probably with better debugging too, and hot re-load for mobile
+  - see excellent samples folder: https://github.com/flutter/samples
+    - https://github.com/flutter/samples/tree/main/veggieseasons/lib
 
 react actually has the most sensible output and also one file
   - what's the overhead? overkill?
