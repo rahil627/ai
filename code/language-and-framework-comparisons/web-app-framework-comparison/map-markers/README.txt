@@ -1,4 +1,15 @@
 just some notes:
+https://www.reddit.com/r/ruby/comments/ecg2q2/which_ruby_web_framework_to_use_these_days/
+  - Why is it you want to use a framework? If you just need a way to interact via HTTP you might want to look into rack. Want routing as well? Might as well start out with roda. Need more features and ease of use? Check out sinatra. Want to learn about a battle-tested, full featured framework? Look into rails.
+
+roda > sinatra
+  - https://www.reddit.com/r/ruby/comments/x0iyg1/sinatra_vs_roda_whats_your_take/
+
+
+hanami or rails
+
+
+
 pure js is just fine (server.js), i guess you'd install node.js for server-side execution
   - express.js is the js copy of sinatra
 **ruby/sinatra** is just prettier (app.rb), and if you've got that installed server-side, can avoid node.js/npm/etc. ;)
